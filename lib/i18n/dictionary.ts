@@ -431,6 +431,18 @@ export type Messages = {
       "particles" | "keyboard" | "terminal",
       { index: string; title: string; desc: string }
     >
+    galaxy: {
+      cardIndex: string
+      cardTitle: string
+      cardDesc: string
+      cardCta: string
+      title: string
+      intro: string
+      back: string
+      particles: (n: number) => string
+      fps: (n: number) => string
+      hint: string
+    }
     terminal: {
       welcome: (siteName: string) => string
       help: string
@@ -1068,6 +1080,19 @@ const zh: Messages = {
         title: "终端模拟器",
         desc: "`help` 看支持的命令 · ↑/↓ 上下翻命令历史 · 试试 `theme dark` 或 `rm -rf /` 看彩蛋。",
       },
+    },
+    galaxy: {
+      cardIndex: "04 · 3D",
+      cardTitle: "粒子星系",
+      cardDesc: "8 万粒子 · 自定义 GLSL shader · Three.js · WebGL 全屏沉浸",
+      cardCta: "进入 →",
+      title: "粒子星系",
+      intro:
+        "80,000 个粒子通过 BufferGeometry 一次性上传 GPU，位置/旋转完全由 vertex shader 实时计算，内圈旋转更快（类开普勒）。鼠标移动改变视角，自动慢转。",
+      back: "返回 lab",
+      particles: (n) => `${n.toLocaleString()} particles`,
+      fps: (n) => `${n} fps`,
+      hint: "move mouse to look around",
     },
     terminal: {
       welcome: (siteName) => `Welcome to ${siteName}. Type \`help\` to begin.`,
@@ -1748,6 +1773,19 @@ const en: Messages = {
         title: "Terminal emulator",
         desc: "`help` to list commands · ↑/↓ history · try `theme dark` or `rm -rf /` for Easter eggs.",
       },
+    },
+    galaxy: {
+      cardIndex: "04 · 3D",
+      cardTitle: "Particle Galaxy",
+      cardDesc: "80k particles · custom GLSL shader · Three.js · full-screen WebGL",
+      cardCta: "Enter →",
+      title: "Particle Galaxy",
+      intro:
+        "80,000 particles uploaded once via BufferGeometry; position/rotation are fully computed in the vertex shader each frame (faster inner orbits, Keplerian feel). Mouse moves the look-around; slow auto-rotation otherwise.",
+      back: "back to lab",
+      particles: (n) => `${n.toLocaleString()} particles`,
+      fps: (n) => `${n} fps`,
+      hint: "move mouse to look around",
     },
     terminal: {
       welcome: (siteName) => `Welcome to ${siteName}. Type \`help\` to begin.`,

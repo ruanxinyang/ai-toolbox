@@ -91,8 +91,18 @@ export function MiniKeyboard() {
   }, [])
 
   useEffect(() => {
+    // Don't fire the piano when the user is typing in a text field
+    // (terminal demo above lives on the same page) or using a modifier
+    // shortcut like Cmd+R / Ctrl+A.
+    const isTextInputTarget = (target: EventTarget | null): boolean => {
+      if (!(target instanceof HTMLElement)) return false
+      const tag = target.tagName
+      return tag === "INPUT" || tag === "TEXTAREA" || target.isContentEditable
+    }
     const downHandler = (e: KeyboardEvent) => {
       if (e.repeat) return
+      if (e.ctrlKey || e.metaKey || e.altKey) return
+      if (isTextInputTarget(e.target)) return
       const note = NOTES.find((n) => n.key === e.key.toLowerCase())
       if (note) {
         e.preventDefault()
@@ -100,6 +110,7 @@ export function MiniKeyboard() {
       }
     }
     const upHandler = (e: KeyboardEvent) => {
+      if (isTextInputTarget(e.target)) return
       const note = NOTES.find((n) => n.key === e.key.toLowerCase())
       if (note) stopNote(note)
     }

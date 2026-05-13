@@ -151,12 +151,6 @@ refactor: 重构 · test: 测试 · perf: 性能
 
 每次 `git commit` 触发 lint-staged → ESLint --fix + Prettier 格式化 stage 内的 ts/tsx/json/css。
 
-## 🗺 路线图
-
-- [ ] v2 计划见 [issues](https://github.com/ruanxinyang/ai-toolbox/issues) 中标 `roadmap` 的项
-- 候选：代码解释器 / Mermaid 自动生成 / PDF 问答 / View Transitions / Vitest 单元测试
-
-详见 [CLAUDE.md - Phase 进度](./CLAUDE.md#phase-进度) 和 [REQUIREMENTS.md - 开发任务清单](./REQUIREMENTS.md#8-开发任务清单)。
 
 ## 📝 License
 

@@ -1,0 +1,5 @@
+case "$1" in
+  /*) MSG="$1" ;;
+  *)  MSG="$(pwd)/$1" ;;
+esac
+cd "$(git rev-parse --show-toplevel)/ai-toolbox" && pnpm exec commitlint --edit "$MSG"

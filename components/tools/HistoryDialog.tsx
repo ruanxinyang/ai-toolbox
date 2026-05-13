@@ -68,12 +68,7 @@ export function HistoryDialog<TInput, TOutput>({
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger
         render={
-          <Button
-            variant="outline"
-            size="sm"
-            aria-label={label}
-            disabled={entries.length === 0}
-          >
+          <Button variant="outline" size="sm" aria-label={label} disabled={entries.length === 0}>
             <HistoryIcon />
             <span>
               {label} {entries.length > 0 ? `(${entries.length})` : ""}

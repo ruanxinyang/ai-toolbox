@@ -136,10 +136,7 @@ export function useHistory<TInput = unknown, TOutput = unknown>(
   remove: (id: string) => void
 } {
   const subscribeFn = useCallback((cb: () => void) => subscribe(slug, cb), [slug])
-  const getSnapshot = useCallback(
-    () => readStable(slug) as HistoryEntry<TInput, TOutput>[],
-    [slug],
-  )
+  const getSnapshot = useCallback(() => readStable(slug) as HistoryEntry<TInput, TOutput>[], [slug])
   const getServerSnapshot = useCallback(() => EMPTY as HistoryEntry<TInput, TOutput>[], [])
   const entries = useSyncExternalStore(subscribeFn, getSnapshot, getServerSnapshot)
   const clear = useCallback(() => clearHistory(slug), [slug])

@@ -24,7 +24,12 @@ type ReplicatePrediction = {
   urls?: { get?: string }
 }
 
-async function poll(url: string, key: string, attempts = 30, intervalMs = 1500): Promise<ReplicatePrediction> {
+async function poll(
+  url: string,
+  key: string,
+  attempts = 30,
+  intervalMs = 1500,
+): Promise<ReplicatePrediction> {
   for (let i = 0; i < attempts; i++) {
     const res = await fetch(url, {
       headers: { Authorization: `Bearer ${key}` },

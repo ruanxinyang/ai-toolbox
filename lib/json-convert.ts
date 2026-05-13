@@ -7,13 +7,7 @@
  * type into `T | null` instead of `null`.
  */
 
-type Json =
-  | string
-  | number
-  | boolean
-  | null
-  | Json[]
-  | { [key: string]: Json }
+type Json = string | number | boolean | null | Json[] | { [key: string]: Json }
 
 type Shape =
   | { kind: "string" }
@@ -200,7 +194,11 @@ function yaml(value: Json, indent = 0): string {
   return entries
     .map(([key, val]) => {
       const safeKey = /^[A-Za-z_][A-Za-z0-9_]*$/.test(key) ? key : JSON.stringify(key)
-      if (val !== null && typeof val === "object" && (Array.isArray(val) ? val.length > 0 : Object.keys(val).length > 0)) {
+      if (
+        val !== null &&
+        typeof val === "object" &&
+        (Array.isArray(val) ? val.length > 0 : Object.keys(val).length > 0)
+      ) {
         const inner = yaml(val, indent + 1)
         return `${pad}${safeKey}:\n${inner}`
       }

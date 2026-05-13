@@ -159,7 +159,8 @@ export const tools: Tool[] = [
   {
     slug: "json-convert",
     name: "JSON 转换",
-    description: "粘 JSON，一键生成 TypeScript 类型 / Zod schema / YAML / 格式化 JSON。零后端、零延迟。",
+    description:
+      "粘 JSON，一键生成 TypeScript 类型 / Zod schema / YAML / 格式化 JSON。零后端、零延迟。",
     href: "/tools/json-convert",
     icon: Braces,
     status: "available",
@@ -178,7 +179,8 @@ export const tools: Tool[] = [
   {
     slug: "image-palette",
     name: "图像调色板",
-    description: "上传图片，视觉模型抽 6 色主调 + 配字体推荐 + mood 描述。一键复制 Tailwind palette。",
+    description:
+      "上传图片，视觉模型抽 6 色主调 + 配字体推荐 + mood 描述。一键复制 Tailwind palette。",
     href: "/tools/image-palette",
     icon: Palette,
     status: "available",

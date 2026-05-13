@@ -397,12 +397,7 @@ function ResponseView({ response }: { response: ApiResponse }) {
           <span className="text-muted-foreground">{response.elapsedMs}ms</span>
           <span className="text-muted-foreground">{response.bodyType}</span>
         </div>
-        <Button
-          variant="ghost"
-          size="icon-xs"
-          onClick={copyBody}
-          aria-label={ui.copyResponseAria}
-        >
+        <Button variant="ghost" size="icon-xs" onClick={copyBody} aria-label={ui.copyResponseAria}>
           <Copy />
         </Button>
       </header>

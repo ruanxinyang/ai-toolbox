@@ -332,9 +332,7 @@ export function ImagePaletteClient() {
                 setModelId(entry.input.modelId)
                 setImage(null)
               }}
-              renderShareable={(entry) =>
-                entry.output.palette.map((p) => p.hex).join(", ")
-              }
+              renderShareable={(entry) => entry.output.palette.map((p) => p.hex).join(", ")}
             />
           </div>
         </div>
@@ -353,7 +351,11 @@ export function ImagePaletteClient() {
                 copiedKey={copiedKey}
                 ui={ui}
               />
-              <ResultFonts fonts={result.fonts} googleFontsLabel={ui.googleFontsLink} label={ui.fontsLabel} />
+              <ResultFonts
+                fonts={result.fonts}
+                googleFontsLabel={ui.googleFontsLink}
+                label={ui.fontsLabel}
+              />
             </>
           ) : (
             <EmptyState />

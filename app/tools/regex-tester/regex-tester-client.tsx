@@ -329,9 +329,7 @@ function HighlightedView({ sample, matches }: { sample: string; matches: Match[]
     return <p className="text-muted-foreground py-6 text-center font-mono text-xs">—</p>
   }
   if (matches.length === 0) {
-    return (
-      <pre className="text-foreground/80 font-mono text-xs whitespace-pre-wrap">{sample}</pre>
-    )
+    return <pre className="text-foreground/80 font-mono text-xs whitespace-pre-wrap">{sample}</pre>
   }
   const chunks: Array<{ text: string; matched: boolean }> = []
   let cursor = 0

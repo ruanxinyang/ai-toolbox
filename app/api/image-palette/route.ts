@@ -28,11 +28,7 @@ const llmSchema = z.object({
         role: z
           .enum(["primary", "secondary", "accent", "neutral", "highlight"])
           .describe("这个颜色在画面里担任的角色"),
-        ratio: z
-          .number()
-          .min(0)
-          .max(100)
-          .describe("估算占比 0-100，全 6 个加起来约等于 100"),
+        ratio: z.number().min(0).max(100).describe("估算占比 0-100，全 6 个加起来约等于 100"),
       }),
     )
     .length(6)
@@ -47,9 +43,7 @@ const llmSchema = z.object({
     )
     .min(2)
     .max(4),
-  mood: z
-    .string()
-    .describe("一句话（≤ 40 字）描述这张图的整体调性 / vibe / 适合的场景"),
+  mood: z.string().describe("一句话（≤ 40 字）描述这张图的整体调性 / vibe / 适合的场景"),
 })
 
 export type ImagePaletteResult = z.infer<typeof llmSchema>

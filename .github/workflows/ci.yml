@@ -45,8 +45,11 @@ jobs:
 
   e2e:
     name: playwright e2e
+    # Only run E2E on PRs — pushes to main are already auto-deployed by Vercel,
+    # and a cold Playwright browser install easily eats the 20-min timeout.
+    if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
 

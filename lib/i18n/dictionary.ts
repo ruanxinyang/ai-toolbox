@@ -153,7 +153,13 @@ export type Messages = {
       pipelineCaption: string
       cachedBadge: string
       tabs: { summary: string; mindmap: string; meta: string }
-      meta: { title: string; author: string; publishedAt: string; wordCount: string; readingTime: string }
+      meta: {
+        title: string
+        author: string
+        publishedAt: string
+        wordCount: string
+        readingTime: string
+      }
       readingMinutes: (n: number) => string
       errorTitle: string
       a11yAnalyzing: string
@@ -421,7 +427,10 @@ export type Messages = {
     badge: string
     title: string
     intro: string
-    sections: Record<"particles" | "keyboard" | "terminal", { index: string; title: string; desc: string }>
+    sections: Record<
+      "particles" | "keyboard" | "terminal",
+      { index: string; title: string; desc: string }
+    >
     terminal: {
       welcome: (siteName: string) => string
       help: string
@@ -795,7 +804,8 @@ const zh: Messages = {
       a11yProcessing: "正在处理音频",
     },
     formGen: {
-      placeholder: "例如：用户注册表单，需要邮箱、密码（≥8位含字母+数字）、姓名、出生日期、同意条款勾选",
+      placeholder:
+        "例如：用户注册表单，需要邮箱、密码（≥8位含字母+数字）、姓名、出生日期、同意条款勾选",
       examples: [
         "用户注册表单：邮箱、密码（至少 8 位，含数字和字母）、确认密码、姓名、生日、勾选'同意条款'",
         "产品反馈表单：评分 1-5 单选、文本反馈（最多 500 字）、邮箱（可选）、'是否愿意被回访'勾选",
@@ -836,7 +846,8 @@ const zh: Messages = {
       downloadFilename: "removed-bg.png",
       errorTitle: "去背景失败",
       errorTitleKey: "需要 Replicate API Key",
-      keyNote: "需要 Replicate Key（不在 BYOK 弹窗里，去 .env 配 REPLICATE_API_KEY 或 header x-byok-replicate）。",
+      keyNote:
+        "需要 Replicate Key（不在 BYOK 弹窗里，去 .env 配 REPLICATE_API_KEY 或 header x-byok-replicate）。",
       modelHint: "Replicate · 851-labs/background-remover",
       tooLarge: (mb) => `图片超过 ${mb}MB 上限`,
       invalidImage: "请上传 JPG / PNG / WEBP 图片",
@@ -844,7 +855,12 @@ const zh: Messages = {
     jsonConvert: {
       placeholder: '{\n  "id": 1,\n  "name": "Ada",\n  "tags": ["admin", "active"]\n}',
       targetLabel: "目标格式",
-      targets: { typescript: "TypeScript type", zod: "Zod schema", yaml: "YAML", json5: "格式化 JSON" },
+      targets: {
+        typescript: "TypeScript type",
+        zod: "Zod schema",
+        yaml: "YAML",
+        json5: "格式化 JSON",
+      },
       rootNameLabel: "根类型名",
       copyBtn: "复制",
       downloadBtn: "下载",
@@ -953,19 +969,23 @@ const zh: Messages = {
       },
       "bg-remove": {
         name: "图片去背景",
-        description: "上传图片，Replicate 851-labs/background-remover 一键扣图，前后对比 + PNG 下载。",
+        description:
+          "上传图片，Replicate 851-labs/background-remover 一键扣图，前后对比 + PNG 下载。",
       },
       "json-convert": {
         name: "JSON 转换",
-        description: "粘 JSON，一键生成 TypeScript 类型 / Zod schema / YAML / 格式化 JSON。零后端、零延迟。",
+        description:
+          "粘 JSON，一键生成 TypeScript 类型 / Zod schema / YAML / 格式化 JSON。零后端、零延迟。",
       },
       "regex-tester": {
         name: "正则速练",
-        description: "粘正则 + 样本文本，实时高亮所有 match、显示捕获组、即时反馈无效语法。还有替换模式。",
+        description:
+          "粘正则 + 样本文本，实时高亮所有 match、显示捕获组、即时反馈无效语法。还有替换模式。",
       },
       "image-palette": {
         name: "图像调色板",
-        description: "上传图片，视觉模型抽 6 色主调 + 配字体推荐 + mood 描述。一键复制 Tailwind palette。",
+        description:
+          "上传图片，视觉模型抽 6 色主调 + 配字体推荐 + mood 描述。一键复制 Tailwind palette。",
       },
     },
   },
@@ -1091,7 +1111,8 @@ const zh: Messages = {
     title: "BYOK · 自带 API Key",
     descriptionMain: "Key 只存在你浏览器的 localStorage，",
     descriptionEmphasis: "不会上传到任何服务器",
-    descriptionTail: "，请求时通过 HTTP header 直接转发给对应 Provider。留空则使用作者默认 quota（受每日限额）。",
+    descriptionTail:
+      "，请求时通过 HTTP header 直接转发给对应 Provider。留空则使用作者默认 quota（受每日限额）。",
     clearAll: "清除所有 Key",
     cancel: "取消",
     save: "保存",
@@ -1335,7 +1356,12 @@ const en: Messages = {
       maxModelsToast: (max) => `Maximum ${max} models per comparison`,
       leaderboardLabel: "Latency ranking",
       waitingLabel: "Waiting for response…",
-      footer: { firstToken: "first token", totalTime: "total", tokens: "tokens", cost: "est. cost" },
+      footer: {
+        firstToken: "first token",
+        totalTime: "total",
+        tokens: "tokens",
+        cost: "est. cost",
+      },
       status: {
         idle: "idle",
         streaming: "streaming",
@@ -1363,8 +1389,7 @@ const en: Messages = {
       regenerateBtn: "Regenerate",
       cancelBtn: "Cancel",
       outputTitle: "Explanation",
-      outputEmpty:
-        "Paste code, click Explain — the streamed Markdown explanation will appear here",
+      outputEmpty: "Paste code, click Explain — the streamed Markdown explanation will appear here",
       charCount: (n) => `${n.toLocaleString()} / 20,000 chars`,
       errorTitle: "Explanation failed",
     },
@@ -1500,7 +1525,12 @@ const en: Messages = {
     jsonConvert: {
       placeholder: '{\n  "id": 1,\n  "name": "Ada",\n  "tags": ["admin", "active"]\n}',
       targetLabel: "Target format",
-      targets: { typescript: "TypeScript type", zod: "Zod schema", yaml: "YAML", json5: "Formatted JSON" },
+      targets: {
+        typescript: "TypeScript type",
+        zod: "Zod schema",
+        yaml: "YAML",
+        json5: "Formatted JSON",
+      },
       rootNameLabel: "Root name",
       copyBtn: "Copy",
       downloadBtn: "Download",

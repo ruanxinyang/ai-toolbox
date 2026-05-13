@@ -11,13 +11,7 @@ const I18nContext = createContext<{ locale: Locale; t: Messages } | null>(null)
  * boundary choking on the function values in the dictionary (e.g. `(n) => "${n} days"`).
  * The client provider re-derives `t` from the bundled dictionary.
  */
-export function I18nProvider({
-  locale,
-  children,
-}: {
-  locale: Locale
-  children: React.ReactNode
-}) {
+export function I18nProvider({ locale, children }: { locale: Locale; children: React.ReactNode }) {
   const value = useMemo(() => ({ locale, t: getMessages(locale) }), [locale])
   return <I18nContext.Provider value={value}>{children}</I18nContext.Provider>
 }

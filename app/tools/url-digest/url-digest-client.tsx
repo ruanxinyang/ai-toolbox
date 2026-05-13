@@ -37,7 +37,9 @@ const MermaidView = dynamic(
 function MermaidLoading() {
   const { t } = useI18n()
   return (
-    <div className="text-muted-foreground p-6 text-center text-sm">{t.tools.mermaidGen.loadingEngine}</div>
+    <div className="text-muted-foreground p-6 text-center text-sm">
+      {t.tools.mermaidGen.loadingEngine}
+    </div>
   )
 }
 

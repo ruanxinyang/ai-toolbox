@@ -2,16 +2,7 @@
 
 import Image from "next/image"
 import { useCallback, useEffect, useId, useRef, useState } from "react"
-import {
-  AlertCircle,
-  Download,
-  Eraser,
-  KeyRound,
-  Loader2,
-  Sparkles,
-  Upload,
-  X,
-} from "lucide-react"
+import { AlertCircle, Download, Eraser, KeyRound, Loader2, Sparkles, Upload, X } from "lucide-react"
 import { toast } from "sonner"
 
 import { BYOKDialog } from "@/components/BYOKDialog"
